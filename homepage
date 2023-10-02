@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+        #logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+        }
+        #login {
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+        }
+        #picture {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        .news-section {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="your-logo-image.png" alt="Logo" width="100">
+        </div>
+        <h1>Your Website Title</h1>
+        <div id="login">
+            <a href="#">Patient Portal</a> | <a href="#">Staff Portal</a>
+        </div>
+    </header>
+
+    <div class="news-section">
+        <img id="picture" src="middle-picture.jpg" alt="Picture">
+        <h2>News Section</h2>
+        <p>Here is some news content...</p>
+    </div>
+
+    <!-- Add more news sections as needed -->
+</body>
+</html>
