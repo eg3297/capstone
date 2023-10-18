@@ -93,3 +93,11 @@ form .text h3 a{
 form .text h3 a:hover{
   text-decoration: underline;
 }
+
+.header {
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+

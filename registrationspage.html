@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -8,27 +7,30 @@
     <link rel="stylesheet" href="regstyle.css">
   </head>
   <body>
+
+    
+
     <div class="wrapper">
       <h2>Registration</h2>
-      <form action="#">
+      <form action="register.php" method="POST">
         <div class="input-box">
-          <input type="text" placeholder="Enter your name" required>
+          <input type="text" name="name" placeholder="Enter your name" required>
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Enter your email" required>
+          <input type="text" name="email" placeholder="Enter your email" required>
         </div>
         <div class="input-box">
-          <input type="tel" placeholder="Enter your phone number" required>
+          <input type="tel" name="phone" placeholder="Enter your phone number" required>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Create password" required>
+          <input type="password" name="pw" placeholder="Create password" required>
         </div>
         <div class="input-box">
           <input type="password" placeholder="Confirm password" required>
         </div>
         <div class="input-box">
           <label for="account-type">Select account type:</label>
-          <select id="account-type" required>
+          <select name="account-type" id="account-type" required>
             <option value="" disabled selected>Select account type</option>
             <option value="staff">Staff</option>
             <option value="patient">Patient</option>
@@ -42,7 +44,9 @@
           <input type="Submit" value="Register Now">
         </div>
         <div class="text">
-          <h3>Already have an account? <a href="#">Login now</a></h3>
+          <h3>Have an account? <a href="PlogIn.html">Patient Login</a> </h3>
+          <h3> <a href="Slogin.html"> Staff Login</a></h3>
+          <h3>Don't want to sign up? <a href="index.html">Return to homepage</a></h3>
         </div>
       </form>
     </div>

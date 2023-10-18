@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="ploginstyle.css">
+</head>
+<body>
+   
+    <div class="header">
+        <a href="index.html" class="logo">
+          <img src="hoslogo.png" alt="CompanyLogo">
+        </a>
+      
+        <div class="header-right">
+          <a href="PlogIn.html">Patient Portal</a>
+          <a href="Slogin.html">Staff Portal</a>
+          <a href="registrationspage.html">Registration</a>
+        </div>
+      
+        <div class="header-title">Healthcare Web Application</div>
+      </div>
+
+      <h2>Staff Login</h2>
+
+    <form action="slogin.php" method="post">
+        <div class="form">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br><br>
+        
+        <label for="pw">Password:</label>
+        <input type="pw" id="pw" name="pw" required><br><br>
+
+        <input type="submit" value="Login">
+        </div>
+    </form>
+   
+</body>
+</html>
