@@ -112,3 +112,17 @@ h2{
     width: 150px;
     text-align: right;
   }
+  .header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #000; /* Set the title color to black */
+    text-decoration: none; /* Remove underline */
+  }
+  .header-title:hover {
+    text-decoration: none;
+    color: #000;
+  }

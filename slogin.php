@@ -30,14 +30,21 @@ if ($result->num_rows == 1) {
         // Passwords match, user is valid
         session_start();
         $_SESSION['email'] = $email;
-        header("Location: welcome.php"); // Redirect to a welcome page
+        header("Location: swelcome.php"); // Redirect to a welcome page
     } else {
-        // Passwords do not match, show an error message
-        echo "Invalid Password";
+        // Passwords do not match, show an error message and redirect after a delay
+        echo "Invalid Password. You will be redirected in 15 seconds. <a href='index.html'>Click here</a> if you are not redirected.";
+
+        // JavaScript to redirect after 15 seconds or when the user clicks the link
+        echo "<script>
+            setTimeout(function() {
+                window.location.href = 'homepage.html';
+            }, 15000); // 15 seconds delay
+        </script>";
     }
 } else {
     // User with the provided email not found, show an error message
-    echo "Cant Find Account";
+    echo "Can't Find Account";
 }
 
 // Close the database connection

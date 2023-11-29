@@ -14,11 +14,11 @@ if ($conn->connect_error) {
 }
 
 // Retrieve user input from the HTML form
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$password = $_POST['pw'];
-$accountType = $_POST['account-type']; // Added this line
+$name = isset($_POST['name']) ? $_POST['name'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+$password = isset($_POST['pw']) ? $_POST['pw'] : '';
+$accountType = isset($_POST['account-type']) ? $_POST['account-type'] : '';
 
 // Hash the password
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -39,7 +39,7 @@ if ($accountType === "patient") {
 $sql = "INSERT INTO $tableName (name, email, phone, pw) VALUES ('$name', '$email', '$phone', '$hashedPassword')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Registration successful.";
+    echo "Registration successful. <a href='" . ($accountType === 'patient' ? 'PlogIn.html' : 'Slogin.html') . "'>Click here to login</a>.";
     // You can redirect the user to a login page or display a confirmation message here.
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -48,3 +48,15 @@ if ($conn->query($sql) === TRUE) {
 // Close the database connection
 $conn->close();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+	<link rel="stylesheet" href="ploginstyle.css">
+</head>
+<body>
+
+</body>
+</html>

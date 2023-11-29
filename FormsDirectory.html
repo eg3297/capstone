@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .header {
+      position: relative;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+    }
+
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+      pointer-events: none; /* Prevent the logo from being clickable */
+    }
+
+    .header a.logo img {
+      height: 50px; /* Adjust the height as needed */
+      width: auto; /* Maintain aspect ratio */
+      vertical-align: middle;
+    }
+
+    .header a:hover {
+      background-color: #ddd;
+    }
+
+    .header a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    .header a.button-container {
+      position: relative;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .header a.button-container:before,
+    .header a.button-container:after {
+      content: '|';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .header a.button-container:before {
+      left: -10px;
+    }
+
+    .header a.button-container:after {
+      right: -10px;
+    }
+
+    /* Hide the last "|" on the last button */
+    .header a.button-container:last-child:after {
+      display: none;
+    }
+
+    /* Added styles for the title */
+    .header-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-weight: bold;
+      color: #000; /* Set the title color to black */
+    }
+
+    h1 {
+      margin-left: 20px;
+    }
+
+    #fileList {
+      list-style: none;
+      padding: 0;
+      margin-left: 20px; /* Add a margin to the left of the list */
+    }
+
+    #fileList li {
+      margin-bottom: 10px; /* Add some bottom margin between each file item */
+    }
+
+    .copy-button {
+      margin-left: 10px;
+    }
+  </style>
+  <title>Form Directory</title>
+</head>
+<body>
+  <div class="header">
+    <a href="#" class="logo">
+      <img src="hoslogo.png" alt="CompanyLogo">
+    </a>
+
+    <div class="header-right">
+      <a href="PlogIn.html">Patient Portal</a>
+      <a href="Slogin.html">Staff Portal</a>
+      <a href="registrationspage.html">Registration</a>
+    </div>
+
+    <a href="homepage.html" class="header-title">Med-E-Form</a>
+  </div>
+
+  <h1>Form Directory</h1>
+
+  <ul id="fileList"></ul>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fileListElement = document.getElementById('fileList');
+
+      // Function to fetch and display files
+      function fetchAndDisplayFiles() {
+        fetch('listFiles.php')
+          .then(response => response.json())
+          .then(data => displayFiles(data.files))
+          .catch(error => {
+            console.error('Error fetching file list:', error);
+          });
+      }
+
+      // Initial load
+      fetchAndDisplayFiles();
+
+      function displayFiles(files) {
+        // Clear the existing file list
+        fileListElement.innerHTML = '';
+
+        // Display the files
+        files.forEach(file => {
+          // Create a clickable hyperlink for each file
+          const link = document.createElement('a');
+          link.href = 'http://54.89.221.160/Forms/' + file; // Update with your server domain
+          link.textContent = file;
+
+          // Create a button to copy the link to the clipboard
+          const copyButton = document.createElement('button');
+          copyButton.textContent = 'Copy Link';
+          copyButton.className = 'copy-button';
+          copyButton.addEventListener('click', () => copyToClipboard(link.href));
+
+          // Create an li element and append the link and copy button to it
+          const listItem = document.createElement('li');
+          listItem.appendChild(link);
+          listItem.appendChild(copyButton);
+
+          // Append the li element to the fileList element
+          fileListElement.appendChild(listItem);
+        });
+      }
+
+      // Function to copy a text to the clipboard
+      function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        // You can provide feedback to the user, e.g., show a tooltip or alert
+        alert('Link copied to clipboard!');
+      }
+    });
+  </script>
+</body>
+</html>
