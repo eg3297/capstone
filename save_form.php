@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 </html>';
 
-    // Specify the full path to the directory
+    
     $directory = '/var/www/html/Forms/';
 
 
@@ -65,8 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Output the file content for download
         readfile($directory . $filename . '.html');
 
-        // Optional: You can delete the file after download if needed
-        // unlink($directory . $filename . '.html');
+       
         
         exit;
     } else {

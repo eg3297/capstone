@@ -1,8 +1,8 @@
 <?php
-$directory = '/var/www/html/Forms'; // Replace with the actual path
+$directory = '/var/www/html/Forms'; 
 
 $files = scandir($directory);
-$files = array_diff($files, array('.', '..')); // Remove . and .. from the list
+$files = array_diff($files, array('.', '..')); 
 
 header('Content-Type: application/json');
 echo json_encode(['files' => array_values($files)]);

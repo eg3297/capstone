@@ -1,4 +1,4 @@
-<!-- patient_list.php -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,12 +42,12 @@ body {
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
-  pointer-events: none; /* Prevent the logo from being clickable */
+  pointer-events: none; 
 }
 
 .header a.logo img {
-  height: 50px; /* Adjust the height as needed */
-  width: auto; /* Maintain aspect ratio */
+  height: 50px; 
+  width: auto; 
   vertical-align: middle;
 }
 
@@ -89,12 +89,12 @@ body {
   right: -10px;
 }
 
-/* Hide the last "|" on the last button */
+
 .header a.button-container:last-child:after {
   display: none;
 }
 
-/* Added styles for the title */
+
 .header-title {
   position: absolute;
   top: 50%;
@@ -102,14 +102,14 @@ body {
   transform: translate(-50%, -50%);
   font-size: 24px;
   font-weight: bold;
-  color: #000; /* Set the title color to black */
-  text-decoration: none; /* Remove underline */
+  color: #000; 
+  text-decoration: none; 
 }
 
 #welcome {
-  padding: 10px; /* Adjust the padding */
-  text-align: right; /* Align text to the right */
-  margin-top: 5px; /* Adjust the margin to move it up */
+  padding: 10px; 
+  text-align: right; 
+  margin-top: 5px; 
   display: flex;
   align-items: center;
 }
@@ -120,15 +120,15 @@ body {
 }
 
 #profile-picture {
-  width: 50px; /* Set the width of the circular image space */
-  height: 50px; /* Set the height of the circular image space */
-  background-color: #ccc; /* Set a background color for the image space */
-  border-radius: 50%; /* Make it circular */
-  margin-right: 10px; /* Add margin to separate it from the text */
+  width: 50px; 
+  height: 50px; 
+  background-color: #ccc; 
+  border-radius: 50%; 
+  margin-right: 10px; 
 }
 
 #logout-button-container {
-  margin-left: auto; /* Push it to the far right */
+  margin-left: auto; 
   display: flex;
   align-items: center;
 }
@@ -163,27 +163,27 @@ body {
   margin-bottom: 10px;
 }
 
-/* Style headers and horizontal rules */
+
 .category-header {
-  background-color: lightblue; /* Light blue background */
+  background-color: lightblue; 
   padding: 10px;
-  border-top: 1px solid #ccc; /* Top border to separate from content */
-  border-bottom: 1px solid #ccc; /* Bottom border to separate from content */
+  border-top: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc; 
 }
 .header-title:hover {
   text-decoration: none;
   color: #000;
 }
 #patient-list ul {
-        padding-left: 20px; /* Adjust the left padding as needed */
-        list-style: none; /* Remove bullet points */
+        padding-left: 20px; 
+        list-style: none; 
     }
 
-    /* Style for each patient entry */
+    
     #patient-list li {
-        margin-bottom: 5px; /* Adjust the bottom margin as needed */
-        border-bottom: 1px solid #ccc; /* Add a line between entries */
-        padding-bottom: 5px; /* Adjust the padding as needed */
+        margin-bottom: 5px; 
+        border-bottom: 1px solid #ccc; 
+        padding-bottom: 5px; 
     }
 </style>
 <title>Patient List</title>
@@ -205,25 +205,25 @@ body {
 
 <body>
     <div class="header">
-        <!-- Your existing header code here -->
+        
     </div>
     <div id="patient-list">
         <?php
-        // Database connection details
+        
         $servername = "sql9.freesqldatabase.com";
         $username = "sql9649975";
         $password = "dvneeFGNSS";
         $dbname = "sql9649975";
 
-        // Create a database connection
+
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Check the connection
+       
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // SQL query to retrieve all names from the patientINFO table
+        
         $sql = "SELECT name FROM patientINFO";
         $result = $conn->query($sql);
 
@@ -238,11 +238,11 @@ body {
             echo "<p>No patients found.</p>";
         }
 
-        // Close the database connection
+        
         $conn->close();
         ?>
     </div>
     <hr>
-    <!-- Your existing footer code here -->
+    
 </body>
 </html>

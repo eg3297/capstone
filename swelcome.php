@@ -44,7 +44,7 @@ body {
 }
 
 .header a.logo img {
-  height: 50px; /* Adjust the height as needed */
+  height: 50px; 
   width: auto; /* Maintain aspect ratio */
   vertical-align: middle;
 }
@@ -92,7 +92,7 @@ body {
   display: none;
 }
 
-/* Added styles for the title */
+
 .header-title {
   position: absolute;
   top: 50%;
@@ -244,13 +244,13 @@ body {
   <div id="upcoming-appointments">
     <h3 class="category-header">Upcoming Appointments</h3>
     <hr>
-    <!-- Add content for upcoming appointments here -->
+    
   </div>
 
   <div id="care-team-messages">
     <h3 class="category-header">Messages from Patients</h3>
     <hr>
-    <!-- Add content for care team messages here -->
+    
   </div>
 
   <div id="action-links">

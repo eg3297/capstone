@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Your existing styles remain unchanged */
+    
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-    /* ... (rest of your styles) ... */
+    
     #questionsContainer {
-      padding: 20px; /* Adjust the padding as needed */
+      padding: 20px; 
     }
     h2 {
       padding: 20px;
@@ -52,7 +52,7 @@
     }
 
     .header a.logo img {
-      height: 50px; /* Adjust the height as needed */
+      height: 50px; 
       width: auto; /* Maintain aspect ratio */
       vertical-align: middle;
     }
@@ -95,7 +95,7 @@
       right: -10px;
     }
 
-    /* Hide the last "|" on the last button */
+    
     .header a.button-container:last-child:after {
       display: none;
     }
@@ -181,7 +181,7 @@
       color: #000;
     }
     #filename {
-      margin-left: 15px; /* Adjust the padding as needed */
+      margin-left: 15px; 
     }
 
   </style>
@@ -205,12 +205,12 @@
   <h2>Create Questions</h2>
 
   <form id="questionForm" onsubmit="saveForm(event)">
-    <!-- Add an input field for the file name -->
+    
     <label for="filename">File Name:</label>
     <input type="text" name="filename" id="filename" placeholder="Enter file name" required>
 
     <div id="questionsContainer">
-      <!-- Questions will be dynamically added here -->
+      
     </div>
 
     <button type="button" onclick="addQuestion()">Add Question</button>

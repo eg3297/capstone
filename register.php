@@ -40,7 +40,7 @@ $sql = "INSERT INTO $tableName (name, email, phone, pw) VALUES ('$name', '$email
 
 if ($conn->query($sql) === TRUE) {
     echo "Registration successful. <a href='" . ($accountType === 'patient' ? 'PlogIn.html' : 'Slogin.html') . "'>Click here to login</a>.";
-    // You can redirect the user to a login page or display a confirmation message here.
+    
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

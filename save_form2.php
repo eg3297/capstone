@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate and sanitize the input if needed
+    
     $questions = isset($_POST['questions']) ? $_POST['questions'] : [];
     $defaultFilename = 'generated_form';
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 </html>';
 
-    // Specify the full path to the directory
+    
     $directory = '/var/www/html/Forms';
 
     // Save the HTML content to a file with the user-provided filename
@@ -57,8 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Output the file content for download
         readfile($directory . $filename . '.html');
 
-        // Optional: You can delete the file after download if needed
-        // unlink($directory . $filename . '.html');
+     
 
         exit;
     } else {
